@@ -34,7 +34,7 @@ install_ironfish(){
             ;;
     esac
     docker pull ghcr.io/iron-fish/ironfish:latest
-    docker run -itd --name node --net host --volume /root/.node:/root/.ironfish ghcr.io/iron-fish/ironfish:latest start
+    docker run -itd --name node --net host --volume /root/.ironfish ghcr.io/iron-fish/ironfish:latest start
     sleep 5
     docker exec -it node bash -c "ironfish config:set blockGraffiti ${name}"
     docker exec -it node bash -c "ironfish config:set enableTelemetry true"
